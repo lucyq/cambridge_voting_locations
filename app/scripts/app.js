@@ -187,7 +187,6 @@ require(['jquery',
                     var link = $('<a>').text(result.formatted_address).data('location', result.geometry.location).on('click', addressClickHandler);
                     $('<li>').append(link).appendTo($ul);
                 }
-                $('.modal').modal('hide');
             }
         }
 

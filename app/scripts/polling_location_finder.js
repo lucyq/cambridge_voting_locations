@@ -57,17 +57,6 @@ define(['jquery',
         }
     }
 
-    function getDirections(destination) {
-        var url;
-        if (navigator.userAgent.match(/iPhone|iPad|iPod/)) {
-            url = "http://maps.apple.com/?saddr=Current+Location&daddr=";
-        } else {
-            url = "https://maps.google.com/maps?daddr=";
-        }
-        return encodeURI(url + destination);
-    }
-
-
     return function(latLng, successCallback, errorCallback) {
 
         var userPrecinct = getUserPrecinct(latLng);
@@ -82,10 +71,9 @@ define(['jquery',
 
             var destination = pollingLocation.getProperty('Address') + ', Cambridge, MA';
             mapService.displayNewPollingPlace(latLng, destination, userPrecinct, successCallback, errorCallback);
-            // userPrecinct.setMap(map);
-            // map.fitBounds(userPrecinct.getBounds());
 
             // display location notes
+
             $('#info .location').text(pollingLocation.getProperty('LOCATION'));
             $('#info .notes').text(pollingLocation.getProperty('LOCATION_NOTE'));
 

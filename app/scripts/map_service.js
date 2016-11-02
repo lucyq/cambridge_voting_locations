@@ -127,8 +127,7 @@ define(['json!vendor/EARLY_VOTING_AddressPoints.geojson'],
 
       map.setCenter(DEFAULT_CENTER_POSITION);
       map.setZoom(DEFAULT_ZOOM_LEVEL);
-
-      //clearPollingLocation();
+      
       if (earlyPollingMarkers.length <= 0) {
         createEarlyPollingMarkers();
       }
